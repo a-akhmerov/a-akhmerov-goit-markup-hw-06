@@ -528,6 +528,51 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .footer .team-soc-link{
   fill: var(--white-text-color);
 }
+.footer-form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 93px;
+}
+.footer-form-label{
+  margin-bottom: 20px;
+  color: var(--white-text-color);
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.footer-field{
+  display: flex;
+}
+.footer-field > button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border-width: 0;
+  color: var(--white-text-color);
+  margin-left: auto;
+}
+.footer-form svg{
+  margin-left: 10px;
+}
+.footer-form input{
+  height: 50px;
+  width: 358px;
+  margin-right: 12px;
+  background-color: var(--dark-bcg-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding-left: 16px;
+  color: var(--white-text-color);
+  
+}
+.footer-form input::placeholder{
+  color:rgba(255, 255, 255, 0.6);
+}
 
 /* Footer */
 
