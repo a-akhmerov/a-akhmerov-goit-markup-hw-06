@@ -715,6 +715,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
   padding-left: 16px;
   color: var(--white-text-color);
+  outline: none;
   
 }
 .mailing-container input::placeholder{
