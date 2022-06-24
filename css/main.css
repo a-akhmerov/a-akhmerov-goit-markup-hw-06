@@ -265,14 +265,13 @@ height: 30px;
 width: 30px;
 cursor: pointer;
 
-transition-property: fill,background-color,border-color;
+transition-property: fill;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus{
-  fill: var(--white-text-color);
-  background-color: var(--accent-color);
+  fill: var(--accent-color);
 }
 .backdrop{
   position:fixed;
@@ -299,6 +298,7 @@ height: 581px;
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 background-color: var(--white-bcg-color);
+padding: 40px;
 
 transform:  translate(-50%, -50%) scale3d(1,1,1);
 transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -307,6 +307,149 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .backdrop.is-hidden .modal{
   transform:  translate(-50%, -50%) scale3d(0,0,0);
 }
+
+.modal-title{
+display: flex;  
+justify-content: center;
+margin-bottom: 12px;
+
+font-size: 20px;
+line-height: 1.15;
+color: var(--dark-text-color);
+}
+.callback-input{
+border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+width: 100%;
+height: 40px;
+padding-left: 42px;
+transition-property: border-color;
+transition-delay: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-inputs label:not(:last-child){  
+margin-bottom: 10px;
+}
+
+.callback-comment{
+width: 100%;
+height: 120px;
+resize: none;
+border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+padding: 12px 16px;
+margin-bottom: 10px;
+transition-property: border-color;
+transition-delay: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-checkbox-container{
+  margin-bottom: 20px;
+}
+.callback-label{
+  display: block;
+}
+.callback-label textarea::placeholder{
+  color: rgba(117, 117, 117, 0.5);
+}
+.callback-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  color: var(--white-text-color);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  background-color:var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: var(--accent-color);
+  border-width: 0;
+  transition-property: background-color;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-button:hover,
+.callback-button:focus{
+  background-color: #188CE8;;
+}
+.callback-icon{
+position: absolute;
+top: 50%;
+left: 12px;
+transform: translateY(-50%);
+transition-property: fill;
+transition-delay: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-container{
+    position: relative;
+}
+.callback-input:hover,
+.callback-input:focus,
+.callback-comment:hover,
+.callback-comment:focus,
+.callback-input:not(:placeholder-shown),
+.callback-comment:not(:placeholder-shown){
+  border: 1px solid #2196F3;
+  border-radius: 4px;
+}
+.callback-input:focus-within,
+.callback-comment:focus-within{
+  outline: none;
+}
+.callback-input:hover ~ .callback-icon,
+.callback-input:focus ~ .callback-icon{
+  fill: var(--accent-color);
+}
+.checkbox-label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 400;
+
+}
+.checkbox-label>span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--dark-text-color);
+  margin-right: 8.38px;
+  border-radius: 3px;
+  fill: transparent;
+}
+.checkbox-label > a{
+  color: var(--accent-color);
+  margin-left: 4px;
+  text-underline-position: under;
+}
+
+.callback-checkbox{
+  transition-property: border-color;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-checkbox:checked + span{
+  background-color: var(--accent-color);
+  fill: var(--white-bcg-color);
+  border: none;
+}
+.callback-checkbox:focus + span,
+.callback-checkbox:hover + span{
+  border-color: var(--accent-color);
+}
+
+
 
 /* Hero */
 
@@ -528,21 +671,21 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .footer .team-soc-link{
   fill: var(--white-text-color);
 }
-.footer-form{
+.mailing-form{
   display: flex;
   flex-direction: column;
   margin-left: 93px;
 }
-.footer-form-label{
+.mailing-title{
   margin-bottom: 20px;
   color: var(--white-text-color);
   line-height: 1.14;
   text-transform: uppercase;
 }
-.footer-field{
+.mailing-container{
   display: flex;
 }
-.footer-field > button{
+.mailing-container > button{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -556,10 +699,10 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--white-text-color);
   margin-left: auto;
 }
-.footer-form svg{
+.mailing-container svg{
   margin-left: 10px;
 }
-.footer-form input{
+.mailing-container input{
   height: 50px;
   width: 358px;
   margin-right: 12px;
@@ -570,7 +713,7 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--white-text-color);
   
 }
-.footer-form input::placeholder{
+.mailing-container input::placeholder{
   color:rgba(255, 255, 255, 0.6);
 }
 
